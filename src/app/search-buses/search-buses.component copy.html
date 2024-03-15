@@ -1,0 +1,51 @@
+  <!-- Search Box Section -->
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Search Buses</h2>
+      <form  [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="leavingFrom">Leaving From</label>
+            <input type="text" class="form-control" formControlName="leavingFrom">
+            @if (f['leavingFrom'].errors  && (f['leavingFrom'].dirty || f['leavingFrom'].touched)) {
+              <div  class="text-danger">
+                @if (f['leavingFrom'].errors['required'] ) {
+                  <div >Leaving From is required</div>
+                }
+                
+              </div>
+            }
+          
+          </div>
+          <div class="col-md-4">
+            <label for="goingTo">Going To</label>
+            <input type="text" class="form-control" formControlName="goingTo">
+            @if (f['goingTo'].errors && (f['goingTo'].dirty || f['goingTo'].touched) ) {
+              <div  class="text-danger">
+                @if (f['goingTo'].errors['required']) {
+                <div>Going To is required</div>
+                }
+              </div>
+            }
+            
+          </div>
+          <div class=" col-md-4">
+            <label for="departingOn">Departing On</label>
+            <input type="date" class="form-control" formControlName="departingOn">
+            @if (f['departingOn'].errors && (f['departingOn'].dirty || f['departingOn'].touched) ) {
+              <div  class="text-danger">
+                @if (f['departingOn'].errors['required']) {
+                  <div >Departing On is required</div>
+                }
+                
+              </div>
+            }
+          
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      
+    </div>
+  </div>
