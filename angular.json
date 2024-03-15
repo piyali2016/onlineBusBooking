@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-bus-ticket-app": {
+    "onlineBusBooking": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-bus-ticket-app",
+            "outputPath": "dist/onlineBusBooking",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-bus-ticket-app:build:production"
+              "buildTarget": "onlineBusBooking:build:production"
             },
             "development": {
-              "buildTarget": "my-bus-ticket-app:build:development"
+              "buildTarget": "onlineBusBooking:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-bus-ticket-app:build"
+            "buildTarget": "onlineBusBooking:build"
           }
         },
         "test": {
