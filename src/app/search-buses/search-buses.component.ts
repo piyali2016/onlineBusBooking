@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Bus } from '../service/bus';
+import { BusService } from '../service/bus-service.service';
+import { DatePipe } from '@angular/common';
+import { HttpClientJsonpModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-buses',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,DatePipe,HttpClientJsonpModule],
   templateUrl: './search-buses.component.html',
   styleUrl: './search-buses.component.css'
 })
 export class SearchBusesComponent implements OnInit {
+  buses: Bus[] = [];
+  source: string = '';
+  destination: string = '';
+  departureDate:string='';
   searchForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private busService: BusService) { }
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
       leavingFrom: ['', Validators.required],
@@ -30,7 +38,14 @@ export class SearchBusesComponent implements OnInit {
     if (this.searchForm.invalid) {
       return;
     }
-  
+    this.source=this.searchForm.controls['leavingFrom'].value;
+    this.destination=this.searchForm.controls['goingTo'].value;
+    this.departureDate=this.searchForm.controls['departingOn'].value;
+    this.busService.getBuses(this.source, this.destination,this.departureDate)
+    .subscribe(buses => {
+      this.buses = buses;
+      console.log('Buses:', this.buses);
+    });
     // Process form submission here
     console.log('Form submitted!', this.searchForm.value);
   }
