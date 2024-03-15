@@ -44,3 +44,7 @@
       </form>
     </div>
   </div>
+  @if (source && destination && departureDate) {
+    <app-bus-list [source]="source" [destination]="destination" [departureTime]="departureDate"></app-bus-list>
+  }
+  

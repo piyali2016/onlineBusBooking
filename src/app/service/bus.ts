@@ -6,6 +6,6 @@ export interface Bus {
     departureTime: string;
     fare: number;
     coachType: string;
-    totalSeats: number;
+    seatCount: number;
   }
   

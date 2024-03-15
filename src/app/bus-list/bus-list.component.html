@@ -1,1 +1,55 @@
-<p>bus-list works!</p>
+<!--div class="container mt-4">
+    <div class="row">
+      
+      @for (bus of buses; track bus) {
+      <div class="col-md-4 mb-3" >
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ bus.name }}</h5>
+            <p class="card-text">Departure Time: {{ bus.departureTime }}</p>
+            <p class="card-text">Coach Type: {{ bus.coachType }}</p>
+            <p class="card-text">Seats Available: {{ bus.seatCount }}</p>
+            <p class="card-text">Fare: ₹{{ bus.fare }}</p>
+            <button class="btn btn-primary" (click)="viewSeats(bus)">View Seats</button>
+          </div>
+        </div>
+      </div>
+    }
+    </div>
+  </div>-->
+  
+@if (buses.length==0 ) {
+    <div class="container card m-auto mt-4"><span class="text-bg-danger">Sorry No buses Aavailable</span></div>  
+}
+@else {
+    <div class="container card m-auto mt-4">
+        <h2>Bus List</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Bus Name</th>
+              <th>Dep. Time</th>
+              <th>Coach Type</th>
+              <th>Seats Available</th>
+              <th>Fare</th>
+              <th></th> <!-- Empty column for the View Seats button -->
+            </tr>
+          </thead>
+          <tbody>
+            @for (bus of buses; track bus) {
+                <tr>
+                    <td>{{ bus.name }}</td>
+                    <td>{{ bus.departureTime }}</td>
+                    <td>{{ bus.coachType }}</td>
+                    <td>{{ bus.seatCount }}</td>
+                    <td>{{ bus.fare }}</td>
+                    <td><button class="btn btn-primary" (click)="viewSeats(bus)">View Seats</button></td>
+                  </tr>
+            }
+            
+          </tbody>
+        </table>
+      </div>
+}
+
+  
