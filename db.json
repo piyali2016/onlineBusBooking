@@ -7,7 +7,8 @@
         "destination": "Mumbai", 
         "fare": 800,
         "departureDate": "2024-03-20",
-        "departureTime": "08:00" 
+        "departureTime": "08:00",
+        "coachType": "Non-AC Sleeper"
       },
       { 
         "id": 2, 
@@ -16,7 +17,8 @@
         "destination": "Hyderabad", 
         "fare": 700,
         "departureDate": "2024-03-20",
-        "departureTime": "09:00"
+        "departureTime": "09:00",
+        "coachType": "Non-AC Sleeper"
       },
       { 
         "id": 3, 
@@ -25,130 +27,31 @@
         "destination": "Coimbatore", 
         "fare": 600,
         "departureDate": "2024-03-21",
-        "departureTime": "10:00" 
+        "departureTime": "10:00" ,
+        "coachType": "Non-AC Sleeper"
       }
     ],
     "seats": [
-      {
-        "busId": "1",
-        "date": "2024-03-20",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": false },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "1",
-        "date": "2024-03-21",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": false },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": false },
-          { "seatNumber": "A4", "price": 20, "available": false },
-          { "seatNumber": "A5", "price": 20, "available": true }
-         
-        ]
-      },
-      {
-        "busId": "1",
-        "date": "2024-03-22",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "1",
-        "date": "2024-03-23",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": false },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "1",
-        "date": "2024-03-24",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-        ]
-      },
-      {
-        "busId": "2",
-        "date": "2024-03-20",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": false },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "2",
-        "date": "2024-03-21",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": false },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": false },
-          { "seatNumber": "A4", "price": 20, "available": false },
-          { "seatNumber": "A5", "price": 20, "available": true }
-         
-        ]
-      },
-      {
-        "busId": "2",
-        "date": "2024-03-22",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "2",
-        "date": "2024-03-23",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": false },
-          { "seatNumber": "A5", "price": 20, "available": true }
-          
-        ]
-      },
-      {
-        "busId": "2",
-        "date": "2024-03-24",
-        "seats": [
-          { "seatNumber": "A1", "price": 20, "available": true },
-          { "seatNumber": "A2", "price": 20, "available": true },
-          { "seatNumber": "A3", "price": 20, "available": true },
-          { "seatNumber": "A4", "price": 20, "available": true },
-          { "seatNumber": "A5", "price": 20, "available": true }
-        ]
-      }
-    
-    
+      {"id": 1, "busId": 1, "seatNumber": "1A", "available": "true"},
+      {"id": 2, "busId": 1, "seatNumber": "1B", "available": "false"},
+      {"id": 3, "busId": 1, "seatNumber": "2A", "available": "true"},
+      {"id": 4, "busId": 1, "seatNumber": "2B", "available": "true"},
+      {"id": 5, "busId": 1, "seatNumber": "3A", "available": "false"},
+      {"id": 6, "busId": 1, "seatNumber": "3B", "available": "true"},
+      {"id": 7, "busId": 1, "seatNumber": "4A", "available": "true"},
+      {"id": 8, "busId": 1, "seatNumber": "4B", "available": "true"},
+      {"id": 9, "busId": 1, "seatNumber": "5A", "available": "true"},
+      {"id": 10, "busId": 1, "seatNumber": "5B", "available": "true"},
+      {"id": 11, "busId": 2, "seatNumber": "1A", "available": "true"},
+      {"id": 12, "busId": 2, "seatNumber": "1B", "available": "true"},
+      {"id": 13, "busId": 2, "seatNumber": "2A", "available": "true"},
+      {"id": 14, "busId": 2, "seatNumber": "2B", "available": "true"},
+      {"id": 15, "busId": 2, "seatNumber": "3A", "available": "false"},
+      {"id": 16, "busId": 2, "seatNumber": "3B", "available": "true"},
+      {"id": 17, "busId": 2, "seatNumber": "4A", "available": "true"},
+      {"id": 18, "busId": 2, "seatNumber": "4B", "available": "true"},
+      {"id": 19, "busId": 2, "seatNumber": "5A", "available": "true"},
+      {"id": 20, "busId": 2, "seatNumber": "5B", "available": "true"}
     ]
   }
   
