@@ -17,7 +17,10 @@ html {
     background-color: #343a40; /* Adjust as needed */
     color: #fff; /* Adjust as needed */
   }
-  
+  main{
+    height: 100%;
+    padding: auto;
+  }
   /* Additional styling for footer */
   .footer .container {
     text-align: center;
