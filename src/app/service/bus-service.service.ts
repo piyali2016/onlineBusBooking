@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
-import { Bus } from './bus'; // Assuming you have a Bus interface
+import { Bus, Seat } from './bus'; // Assuming you have a Bus interface
 
 @Injectable({
   providedIn: 'root'
 })
 export class BusService {
-  private apiUrl = 'http://localhost:3000';
+ // private apiUrl ='http://localhost:3000';// 'https://my-json-server.typicode.com/piyali2016/onlineBusBooking';
+  private apiUrl = 'https://my-json-server.typicode.com/piyali2016/onlineBusBooking';
+
 
   constructor(private http: HttpClient) { }
    // Enhanced method to get buses with their available seat count
@@ -42,5 +44,9 @@ export class BusService {
   }
   getAvailableSeatCountForBusId(busid:any,available:string): Observable<number> {
     return this.http.get<any[]>(`${this.apiUrl}/seats?busId=${busid}&available=${available}`).pipe(map((seats) => seats.length));
+  }
+  getSeatsByBusId(busId: number): Observable<Seat[]> {
+    const url = `${this.apiUrl}/seats?busId=${busId}`;
+    return this.http.get<Seat[]>(url);
   }
 }

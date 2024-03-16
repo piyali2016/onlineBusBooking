@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+      <!-- Left side: Seat Icons -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Select Seat
+          </div>
+          <div class="card-body">
+            <!-- Display seat icons here -->
+            @for (chunk of chunkArray(seats, seatsPerRow); track chunk) {
+              <div class="seat-row">
+                @for ( seat of chunk; track seat) {
+                <div class="seat">
+                  <i (click)="selectSeat(seat)" class="fa-solid fa-couch" style="cursor: pointer;"></i>
+                </div>
+              }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right side: Selected Seats -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Selected Seats
+          </div>
+          <div class="card-body">
+            <!-- Table to display selected seats -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Seat Number</th>
+                  <th>Seat Fare</th>
+                  <th>Seat Class</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (sel of uniqueArray; track sel) {
+                   <tr>
+                  <td>{{ sel.seatNumber }}</td>
+                  <td>{{ sel.fare }}</td>
+                  @if (sel.available) {
+                    <td>Available</td>
+                  }@else {
+                    <td>Not Available</td>
+                  }
+               </tr>
+                }
+                <!-- Loop through selected seats and display details -->
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title">Total Fare</h5>
+            <p class="card-text">Total Amount: {{ calculateTotalPrice() }}</p>
+          </div>
+        </div>
+        <div class="mt-5">
+          <button class="btn btn-primary m-auto">Continue </button>
+        </div>
+       
+      </div>
+      
+    </div>
+    
+  </div>
+  

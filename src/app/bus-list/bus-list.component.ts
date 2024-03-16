@@ -3,11 +3,12 @@ import { Bus } from '../service/bus';
 import { BusService } from '../service/bus-service.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { Route, Router, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-bus-list',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe,RouterLinkActive],
   templateUrl: './bus-list.component.html',
   styleUrl: './bus-list.component.css'
 })
@@ -16,7 +17,7 @@ export class BusListComponent {
   @Input() destination: string = '';
   @Input() departureTime: string = ''; 
   buses: Bus[] = [];
-  constructor(private busService: BusService) { }
+  constructor(private busService: BusService, private router:Router) { }
   ngOnInit(): void {
     this.fetchBuses();
   }
@@ -36,8 +37,7 @@ export class BusListComponent {
     
   }
  
-  viewSeats(bus: Bus): void {
-    // Implement logic to navigate to the seats view for the selected bus
-    console.log('View seats for bus:', bus);
+  viewSeats(busId: number): void {
+    this.router.navigate(['/seat-selection', busId]);
   }
 }
