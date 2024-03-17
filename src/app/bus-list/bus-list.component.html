@@ -18,8 +18,8 @@
     </div>
   </div>-->
   
-@if (buses.length==0 ) {
-    <div class="container card m-auto mt-4"><span class="text-bg-danger">Sorry No buses Aavailable</span></div>  
+@if (buses.length==0 && isfetchResponseCame) {
+    <div class="container card m-auto mt-4">Sorry No buses Aavailable</div>  
 }
 @else {
     <div class="container card m-auto mt-4">

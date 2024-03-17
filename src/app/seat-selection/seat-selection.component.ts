@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BusService } from '../service/bus-service.service';
 import { SlicePipe } from '@angular/common';
 
@@ -17,7 +17,7 @@ export class SeatSelectionComponent  implements OnInit {
   seatsPerRow:number = 4;
   uniqueArray:any[] =[];
 
-  constructor(private route: ActivatedRoute,private busService: BusService) { }
+  constructor(private route: ActivatedRoute,private busService: BusService, private router:Router) { }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.busId = +params['busId'];
@@ -40,7 +40,7 @@ export class SeatSelectionComponent  implements OnInit {
    
   }
   chunkArray(array: any[], chunkSize: number): any[][] {
-    const chunks = [];
+    const chunks:any = [];
     for (let i = 0; i < array.length; i += chunkSize) {
       chunks.push(array.slice(i, i + chunkSize));
     }
@@ -50,5 +50,9 @@ export class SeatSelectionComponent  implements OnInit {
     // Calculate total price based on selected seats
     return this.uniqueArray.reduce((total, seat) => total + seat.fare, 0);
   }
-  
+  continueToPassengerInfo(): void {
+    // Navigate to Passenger Information component and pass selectedSeats as route parameter
+    //this.router.navigate(['/passenger-info'], { state: { seats: this.uniqueArray } });
+    this.router.navigate(['/passenger-info'], { queryParams: { seats: JSON.stringify(this.selectedSeats) } });
+  }
 }

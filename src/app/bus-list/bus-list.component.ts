@@ -17,6 +17,7 @@ export class BusListComponent {
   @Input() destination: string = '';
   @Input() departureTime: string = ''; 
   buses: Bus[] = [];
+  isfetchResponseCame=false;
   constructor(private busService: BusService, private router:Router) { }
   ngOnInit(): void {
     this.fetchBuses();
@@ -31,6 +32,7 @@ export class BusListComponent {
   fetchBuses(): void {
     // Fetch buses based on source, destination, and departure time
     this.busService.getBusesWithSeatCounts(this.source, this.destination, this.departureTime).subscribe(buses => {
+      this.isfetchResponseCame=true;
       this.buses = buses;
       console.log(this.buses);
     });

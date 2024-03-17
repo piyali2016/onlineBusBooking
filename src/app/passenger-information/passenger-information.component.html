@@ -1,0 +1,49 @@
+<div class="row">
+  <!-- Passenger Details Form -->
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Passenger Information
+      </div>
+      <div class="card-body">
+<form [formGroup]="passengerForm" (ngSubmit)="submitPassengerInfo()">
+    <div class="form-group">
+      <label for="userName">Name:</label>
+      <input type="text" formControlName="userName" class="form-control" id="userName" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="userMobile">Mobile No:</label>
+      <input type="text" formControlName="userMobile" class="form-control" id="userMobile" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Email:</label>
+      <input type="email" formControlName="userEmail" class="form-control" id="userEmail" placeholder="Enter your email" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
+<!-- Review Ticket Card -->
+
+@if(isfetchResponseCame){
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Journey Details
+      </div>
+      <div class="card-body bg-danger-subtle">
+        <!-- Your review ticket card content here -->
+        <h1>{{bus[0].source}} TO {{bus[0].destination}}</h1>
+        <p >{{bus[0].name}}</p>
+        <p>Date and Time: {{bus[0].departureDate}}  {{bus[0].departureTime}}</p>
+        <p>Coach Type: {{bus[0].coachType}}</p>
+        <!-- Additional journey details -->
+      </div>
+    </div>
+    </div>
+}
+
+</div>
+  
