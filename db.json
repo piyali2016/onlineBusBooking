@@ -1,64 +1,346 @@
 {
-    "buses": [
-      { 
-        "id": 1, 
-        "name": "RedBus Deluxe", 
-        "source": "Delhi", 
-        "destination": "Mumbai", 
-        "fare": 800,
+  "buses": [
+    {
+      "id": "1",
+      "name": "RedBus Deluxe",
+      "source": "Delhi",
+      "destination": "Mumbai",
+      "fare": 800,
+      "departureDate": "2024-03-20",
+      "departureTime": "08:00",
+      "coachType": "Non-AC Sleeper"
+    },
+    {
+      "id": "2",
+      "name": "VRL Travels",
+      "source": "Bangalore",
+      "destination": "Hyderabad",
+      "fare": 700,
+      "departureDate": "2024-03-20",
+      "departureTime": "09:00",
+      "coachType": "Non-AC Sleeper"
+    },
+    {
+      "id": "3",
+      "name": "SRS Travels",
+      "source": "Chennai",
+      "destination": "Coimbatore",
+      "fare": 600,
+      "departureDate": "2024-03-21",
+      "departureTime": "10:00",
+      "coachType": "Non-AC Sleeper"
+    }
+  ],
+  "seats": [
+    {
+      "id": "1",
+      "busId": 1,
+      "seatNumber": "1A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "2",
+      "busId": 1,
+      "seatNumber": "1B",
+      "available": "false",
+      "fare": 600
+    },
+    {
+      "id": "3",
+      "busId": 1,
+      "seatNumber": "2A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "4",
+      "busId": 1,
+      "seatNumber": "2B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "5",
+      "busId": 1,
+      "seatNumber": "3A",
+      "available": "false",
+      "fare": 600
+    },
+    {
+      "id": "6",
+      "busId": 1,
+      "seatNumber": "3B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "7",
+      "busId": 1,
+      "seatNumber": "4A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "8",
+      "busId": 1,
+      "seatNumber": "4B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "9",
+      "busId": 1,
+      "seatNumber": "5A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "10",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "11",
+      "busId": 2,
+      "seatNumber": "1A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "12",
+      "busId": 2,
+      "seatNumber": "1B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "13",
+      "busId": 2,
+      "seatNumber": "2A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "14",
+      "busId": 2,
+      "seatNumber": "2B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "15",
+      "busId": 2,
+      "seatNumber": "3A",
+      "available": "false",
+      "fare": 600
+    },
+    {
+      "id": "16",
+      "busId": 2,
+      "seatNumber": "3B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "17",
+      "busId": 2,
+      "seatNumber": "4A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "18",
+      "busId": 2,
+      "seatNumber": "4B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "19",
+      "busId": 2,
+      "seatNumber": "5A",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "20",
+      "busId": 2,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "21",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "22",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "23",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "24",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "25",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "26",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    },
+    {
+      "id": "27",
+      "busId": 1,
+      "seatNumber": "5B",
+      "available": "true",
+      "fare": 600
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1",
+      "passenger": {
+        "name": "John Doe",
+        "mobile": "1234567890",
+        "email": "john@example.com"
+      },
+      "bus": {
+        "id": 1,
+        "departure": "2024-03-25T08:00:00Z",
+        "destination": "2024-03-25T12:00:00Z",
+        "seats": [
+          {
+            "number": "1A",
+            "fare": 100
+          },
+          {
+            "number": "1B",
+            "fare": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "passenger": {
+        "name": "Alice Smith",
+        "mobile": "9876543210",
+        "email": "alice@example.com"
+      },
+      "bus": {
+        "id": 2,
+        "departure": "2024-03-26T09:00:00Z",
+        "destination": "2024-03-26T13:00:00Z",
+        "seats": [
+          {
+            "number": "2A",
+            "fare": 120
+          },
+          {
+            "number": "2B",
+            "fare": 120
+          }
+        ]
+      }
+    },
+    {
+      "id": "17106708427337608",
+      "passenger": {
+        "name": "sasdsadsad",
+        "mobile": "asas",
+        "email": "dsdsd@dsfds.com"
+      },
+      "bus": {
+        "id": 1,
         "departureDate": "2024-03-20",
         "departureTime": "08:00",
-        "coachType": "Non-AC Sleeper"
-      },
-      { 
-        "id": 2, 
-        "name": "VRL Travels", 
-        "source": "Bangalore", 
-        "destination": "Hyderabad", 
-        "fare": 700,
-        "departureDate": "2024-03-20",
-        "departureTime": "09:00",
-        "coachType": "Non-AC Sleeper"
-      },
-      { 
-        "id": 3, 
-        "name": "SRS Travels", 
-        "source": "Chennai", 
-        "destination": "Coimbatore", 
-        "fare": 600,
-        "departureDate": "2024-03-21",
-        "departureTime": "10:00" ,
-        "coachType": "Non-AC Sleeper"
+        "coachType": "Non-AC Sleeper",
+        "destination": "Mumbai",
+        "fare": 800,
+        "name": "RedBus Deluxe",
+        "seats": "1A,1B,2A"
       }
-    ],
-    "seats": [
-      {"id": 1, "busId": 1, "seatNumber": "1A", "available": "true","fare":600},
-      {"id": 2, "busId": 1, "seatNumber": "1B", "available": "false","fare":600},
-      {"id": 3, "busId": 1, "seatNumber": "2A", "available": "true","fare":600},
-      {"id": 4, "busId": 1, "seatNumber": "2B", "available": "true","fare":600},
-      {"id": 5, "busId": 1, "seatNumber": "3A", "available": "false","fare":600},
-      {"id": 6, "busId": 1, "seatNumber": "3B", "available": "true","fare":600},
-      {"id": 7, "busId": 1, "seatNumber": "4A", "available": "true","fare":600},
-      {"id": 8, "busId": 1, "seatNumber": "4B", "available": "true","fare":600},
-      {"id": 9, "busId": 1, "seatNumber": "5A", "available": "true","fare":600},
-      {"id": 10, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 11, "busId": 2, "seatNumber": "1A", "available": "true","fare":600},
-      {"id": 12, "busId": 2, "seatNumber": "1B", "available": "true","fare":600},
-      {"id": 13, "busId": 2, "seatNumber": "2A", "available": "true","fare":600},
-      {"id": 14, "busId": 2, "seatNumber": "2B", "available": "true","fare":600},
-      {"id": 15, "busId": 2, "seatNumber": "3A", "available": "false","fare":600},
-      {"id": 16, "busId": 2, "seatNumber": "3B", "available": "true","fare":600},
-      {"id": 17, "busId": 2, "seatNumber": "4A", "available": "true","fare":600},
-      {"id": 18, "busId": 2, "seatNumber": "4B", "available": "true","fare":600},
-      {"id": 19, "busId": 2, "seatNumber": "5A", "available": "true","fare":600},
-      {"id": 20, "busId": 2, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 21, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 22, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 23, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 24, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 25, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 26, "busId": 1, "seatNumber": "5B", "available": "true","fare":600},
-      {"id": 27, "busId": 1, "seatNumber": "5B", "available": "true","fare":600}
-    ]
-  }
-  
+    },
+    {
+      "id": "17106711224841199",
+      "passenger": {
+        "name": "ssas",
+        "mobile": "dxsd",
+        "email": "piyali.2006@gmail.com"
+      },
+      "bus": {
+        "id": "1",
+        "departureDate": "2024-03-20",
+        "departureTime": "08:00",
+        "coachType": "Non-AC Sleeper",
+        "destination": "Mumbai",
+        "fare": 800,
+        "name": "RedBus Deluxe",
+        "seats": "1A,1B,3B,1A,3A,5B"
+      }
+    },
+    {
+      "id": "17106742174362583",
+      "passenger": {
+        "name": "hjhjhj",
+        "mobile": "fffh",
+        "email": "piyali.2006@gmail.com"
+      },
+      "bus": {
+        "id": "1",
+        "departureDate": "2024-03-20",
+        "departureTime": "08:00",
+        "coachType": "Non-AC Sleeper",
+        "destination": "Mumbai",
+        "fare": 800,
+        "name": "RedBus Deluxe",
+        "seats": "1A,3A,3B"
+      }
+    },
+    {
+      "id": "17106744918432654",
+      "passenger": {
+        "name": "ghgh",
+        "mobile": "bhhbh",
+        "email": "piyali.2006@gmail.com"
+      },
+      "bus": {
+        "id": "1",
+        "departureDate": "2024-03-20",
+        "departureTime": "08:00",
+        "coachType": "Non-AC Sleeper",
+        "destination": "Mumbai",
+        "fare": 800,
+        "name": "RedBus Deluxe",
+        "source": "Delhi",
+        "seats": "1A,3A,3B"
+      }
+    }
+  ]
+}

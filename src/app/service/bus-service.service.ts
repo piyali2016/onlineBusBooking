@@ -7,7 +7,7 @@ import { Bus, Seat } from './bus'; // Assuming you have a Bus interface
   providedIn: 'root'
 })
 export class BusService {
- // private apiUrl ='http://localhost:3000';// 'https://my-json-server.typicode.com/piyali2016/onlineBusBooking';
+ //private apiUrl ='http://localhost:3000';// 'https://my-json-server.typicode.com/piyali2016/onlineBusBooking';
   private apiUrl = 'https://my-json-server.typicode.com/piyali2016/onlineBusBooking';
 
 
@@ -48,5 +48,13 @@ export class BusService {
   getSeatsByBusId(busId: number): Observable<Seat[]> {
     const url = `${this.apiUrl}/seats?busId=${busId}`;
     return this.http.get<Seat[]>(url);
+  }
+  getBusById(busId:any):Observable<Bus[]>{
+    const url = `${this.apiUrl}/buses?id=${busId}`;
+    return this.http.get<Bus[]>(url);
+  }
+  savePassengerInfo(passengerInfo: any): Observable<any> {
+    const url = `${this.apiUrl}/reservations`;
+    return this.http.post<any>(url, passengerInfo);
   }
 }

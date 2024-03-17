@@ -63,9 +63,12 @@
             <p class="card-text">Total Amount: {{ calculateTotalPrice() }}</p>
           </div>
         </div>
-        <div class="mt-5">
-          <button class="btn btn-primary m-auto">Continue </button>
-        </div>
+        @if (uniqueArray.length >0 ) {
+          <div class="mt-5">
+            <button class="btn btn-primary m-auto" (click)="continueToPassengerInfo()">Continue </button>
+          </div>   
+        }
+       
        
       </div>
       
